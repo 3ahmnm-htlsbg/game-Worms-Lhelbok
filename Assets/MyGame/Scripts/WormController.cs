@@ -4,12 +4,46 @@ using UnityEngine;
 
 public class WormController : MonoBehaviour
 {
-   void Update()
+    public float thrust = 1.0f;
+    public GameObject spawnPoint;
+    public Rigidbody player;
+    public Rigidbody bullet;
+
+    /*void Start()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+
+    }*/
+
+    public void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            Debug.Log("Wird aufgerufen!");
+            player.AddForce(-5, 0, thrust, ForceMode.Impulse);
         }
+
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            player.AddForce(5, 0, thrust, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            player.AddForce(0, 5, thrust, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            player.AddForce(0, -5, thrust, ForceMode.Impulse);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Rigidbody hitPlayer;
+            hitPlayer = Instantiate(bullet, spawnPoint.transform.position, transform.rotation) as Rigidbody;
+            hitPlayer.AddForce(10, 0, thrust, ForceMode.Impulse);
+        }
+
     }
 }
 
