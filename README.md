@@ -1,28 +1,30 @@
 # game-Worms-Lhelbok
 
 ### Project description: 
-Introduction/Project summary 
 
 ### Development platform: 
-(OS, Unity Version, Visual Studio Version, used SDKs)
+
+- Unity 2019.1.14f1
+- Visual Studio Community
+- Windows 10 Home
 
 ### Target platform: 
-WebGL, Mobile, VR Device incl. reference resolution 
+WebGL
 
 ### Visuals: 
-Screenshots (concept and experience), Video
+Screenshot
 
 ### Necessary setup/execution steps: 
-Installation process, e.g. step by step instructions that I can run the project after cloning it
+
 
 ### Third party material: 
-(if used Fonts, Sounds, Music, Graphics, Materials, Code etc.)
+template for the README by smeerws
 
 ### Project state: 
-incl. progress in percent
+40%
 
 ### Limitations: 
 
 ### Lessons Learned: 
 
-Copyright by you :)
+Copyright by Lhelbok
