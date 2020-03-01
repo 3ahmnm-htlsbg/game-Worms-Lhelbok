@@ -8,6 +8,7 @@ public class WormController : MonoBehaviour
     public GameObject spawnPoint;
     public Rigidbody player;
     public Rigidbody bullet;
+    public GameObject bazuca;
 
     /*void Start()
     {
@@ -37,13 +38,18 @@ public class WormController : MonoBehaviour
             player.AddForce(0, -5, thrust, ForceMode.Impulse);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             Rigidbody hitPlayer;
             hitPlayer = Instantiate(bullet, spawnPoint.transform.position, transform.rotation) as Rigidbody;
             hitPlayer.AddForce(10, 0, thrust, ForceMode.Impulse);
-        }
+        }*/
 
+        /*if (Input.GetKeyDown(KeyCode.E))
+        {
+            bazuca.transform.Rotate(2, 0, 20);
+        }*/
     }
+
 }
 
