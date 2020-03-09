@@ -4,56 +4,92 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    private Rigidbody rb;
-    public GameObject bulletSpawnPoint;
-    private Vector3 bulletSpawnPointPos;
+    private Rigidbody player;
+    public GameObject bulletSpawn;
+    private Vector3 bazucaSpawnPos;
 
-    private Quaternion bulletSpawnPointRot;
+    private Quaternion bazucaSpawnRot;
     public GameObject bullet;
     private GameObject bulletInst;
     private int i = 0;
-
-   
+    private bool playerNumberOne;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        player = GetComponent<Rigidbody>();
+        if (this.transform.position.x < 0)
+        {
+            playerNumberOne = true;
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //rotate the gun left
-        if (Input.GetKey("q"))
+        if (playerNumberOne == true)
         {
-            rb.AddTorque(0f, 0f, 5f);
-        }
-        //rotate the gun right
-        if (Input.GetKey("e"))
-        {
-            rb.AddTorque(0f, 0f, -5f);
-        }
-        //shoot
-        if (Input.GetKey("2"))
-        {
-            i--;
-            if (i < 0)
+            //rotate the bazuca to the right side
+            if (Input.GetKey("e"))
             {
-                shoot();
-                i = 20;
+                player.AddTorque(0f, 0f, -5f);
+            }
+
+            //rotate the bazuca to the left side
+            if (Input.GetKey("q"))
+            {
+                player.AddTorque(0f, 0f, 5f);
+            }
+
+            //shoot with the bazuca
+            if (Input.GetKey("2"))
+            {
+                i--;
+                if (i < 0)
+                {
+                    ShootBullet();
+                    i = 23;
+                }
             }
         }
-
-        void shoot()
+        else
         {
-            Rigidbody rbBullet;
-            //get GunCube Pos and Rotation
-            bulletSpawnPointPos = bulletSpawnPoint.transform.position;
-            bulletSpawnPointRot = bulletSpawnPoint.transform.rotation;
-            //Instatiate
-            bulletInst = Instantiate(bullet, bulletSpawnPointPos, bulletSpawnPointRot) as GameObject;
-            //add force
-            rbBullet = bulletInst.GetComponent<Rigidbody>();
-            rbBullet.AddForce(this.transform.up * 2f, ForceMode.Impulse);
+            //rotate the bazuca to the right side
+            if (Input.GetKey("o"))
+            {
+                player.AddTorque(0f, 0f, -5f);
+            }
+
+            //rotate the bazuca to the left side
+            if (Input.GetKey("u"))
+            {
+                player.AddTorque(0f, 0f, 5f);
+            }
+
+            //shoot with the bazuca
+            if (Input.GetKey("8"))
+            {
+                i--;
+                if (i < 0)
+                {
+                    ShootBullet();
+                    i = 23;
+                }
+            }
         }
+    }
+
+    void ShootBullet()
+    {
+        //lets the bazuca shoot the bullet
+        Rigidbody rigidbodyBullet;
+
+        //get the bazuca position and rotation
+        bazucaSpawnPos = bulletSpawn.transform.position;
+        bazucaSpawnRot = bulletSpawn.transform.rotation;
+
+        //Instatiate the bullet
+        bulletInst = Instantiate(bullet, bazucaSpawnPos, bazucaSpawnRot) as GameObject;
+
+        //add force
+        rigidbodyBullet = bulletInst.GetComponent<Rigidbody>();
+        rigidbodyBullet.AddForce(this.transform.up * 2f, ForceMode.Impulse);
     }
 }

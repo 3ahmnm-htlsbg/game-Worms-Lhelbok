@@ -4,52 +4,101 @@ using UnityEngine;
 
 public class WormController : MonoBehaviour
 {
-    public float thrust = 1.0f;
-    public GameObject spawnPoint;
-    public Rigidbody player;
-    public Rigidbody bullet;
-    public GameObject bazuca;
+    private Rigidbody player;
+    public bool playerJumpBool;
+    private bool playerNumberOne;
+    private GameObject gameManager;
 
-    /*void Start()
+    private bool hasSpawnProt;
+    void Start()
     {
-
-    }*/
-
-    public void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.A))
+        player = GetComponent<Rigidbody>();
+        if (this.transform.position.x < 0)
         {
-            player.AddForce(-5, 0, thrust, ForceMode.Impulse);
+            playerNumberOne = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            player.AddForce(5, 0, thrust, ForceMode.Impulse);
-        }
-
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            player.AddForce(0, 5, thrust, ForceMode.Impulse);
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            player.AddForce(0, -5, thrust, ForceMode.Impulse);
-        }
-
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Rigidbody hitPlayer;
-            hitPlayer = Instantiate(bullet, spawnPoint.transform.position, transform.rotation) as Rigidbody;
-            hitPlayer.AddForce(10, 0, thrust, ForceMode.Impulse);
-        }*/
-
-        /*if (Input.GetKeyDown(KeyCode.E))
-        {
-            bazuca.transform.Rotate(2, 0, 20);
-        }*/
+        
     }
 
+    void Update()
+    {
+        if (playerNumberOne == true)
+        {
+            //move the worm to the right side
+            if (Input.GetKey("d"))
+            {
+                player.AddForce(.5f, 0f, 0f, ForceMode.Impulse);
+            }
+
+            //move the worm to the left side
+            if (Input.GetKey("a"))
+            {
+                player.AddForce(-.5f, 0f, 0f, ForceMode.Impulse);
+            }
+
+            //let the worm jump upwards
+            if (Input.GetKeyDown("w") && playerJumpBool == true)
+            {
+                PlayerJump();
+                playerJumpBool = false;
+            }
+        }
+        else
+        {
+            //move the worm to the right side
+            if (Input.GetKey("l"))
+            {
+                player.AddForce(.5f, 0f, 0f, ForceMode.Impulse);
+            }
+
+            //move the worm to the left side
+            if (Input.GetKey("j"))
+            {
+                player.AddForce(-.5f, 0f, 0f, ForceMode.Impulse);
+            }
+
+            //let the worm jump upwards
+            if (Input.GetKeyDown("i") && playerJumpBool == true)
+            {
+                PlayerJump();
+                playerJumpBool = false;
+            }
+        }
+    }
+
+    void PlayerJump()
+    {
+        //method to let the worm jump in direction y
+        player.AddForce(0f, 5.25f, 0f, ForceMode.Impulse);
+    }
+
+    void OnTriggerStay(Collider target)
+    {
+        if (target.tag == "SceneItems")
+        {
+            playerJumpBool = true;
+        }
+    }
+
+    public void PlayerDied()
+    {
+
+        if (!hasSpawnProt)
+        {
+            //get the GameManager
+            gameManager = GameObject.Find("GameManager");
+            gameManager.GetComponent<GameManager>().PlayerDiedGM(playerNumberOne);
+            Destroy(gameObject);
+        }
+    }
+
+    public void AddHealth()
+    {
+        //get the GameManager
+        gameManager = GameObject.Find("GameManager");
+        gameManager.GetComponent<GameManager>().PlayerAddHealthGM(playerNumberOne);
+    }
 }
+
+
 

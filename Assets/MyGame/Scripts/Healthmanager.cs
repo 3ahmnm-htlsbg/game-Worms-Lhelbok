@@ -1,34 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Healthmanager : MonoBehaviour
+public class HealthManager : MonoBehaviour
 {
-    public int health = 10;
-    public TextAlignment playerOneHealth;
-  
-    // Start is called before the first frame update
-    void Start()
+    public void Update()
     {
-        
+        //rotate health package
+        this.transform.Rotate(0.42f, 0.6f, 0.26f, Space.Self);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "BulletShot" && health > 0)
+        //get wormcontroller when player collides with health cube
+        if (collision.gameObject.tag == "Player")
         {
-            health = health - 1;
+            collision.gameObject.GetComponent<WormController>().AddHealth();
         }
-        if (collision.gameObject.tag == "PlusLife" && health > 10)
-        {
-            health = health + 1;
-        }
+
+        //destroy cube when player collides with it
+        Destroy(gameObject, 0);
     }
 }
