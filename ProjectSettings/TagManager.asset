@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BulletShot
   - PlusLife
+  - SceneItems
   layers:
   - Default
   - TransparentFX
