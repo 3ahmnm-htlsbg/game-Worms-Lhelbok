@@ -1,7 +1,8 @@
 # game-Worms-Lhelbok
 
 ### Project description: 
-Game where worms can shoot each other with bazucas.
+
+Game where worms can shoot each other with bazucas. Two player game, the task is to shoot at your enemies worm four times to win the game.
 
 ### Development platform: 
 
@@ -12,24 +13,29 @@ Game where worms can shoot each other with bazucas.
 - Scripting Runtime Version: 4.X;
 
 ### Target platform: 
-WebGL 960x600
+WebGL 1920x1080
 
 ### Visuals: 
 -TODO
 
 ### Necessary setup/execution steps: 
--TODO
+
+WebGL has to be installed + stable internet connection
 
 ### Third party material: 
 template for the README by smeerws
 
 ### Project state: 
-50%
+90%
 
 ### Limitations: 
 None
 
 ### Lessons Learned: 
--TODO
+
+- How to instantiate objects
+- That a method can be applied to a key
+- How to code and object into shooting something
+- That a method from another script can be called
 
 Copyright by Lhelbok
