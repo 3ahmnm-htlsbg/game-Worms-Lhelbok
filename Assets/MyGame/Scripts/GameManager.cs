@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Text playerTwoText;
     private int playerOneLife;
     private int playerTwoLife;
+    private GameObject gameManager;
 
     public GameObject Health;
 
@@ -109,9 +110,10 @@ public class GameManager : MonoBehaviour
     void PresentWinner()
     {
         //presents the winner 
-        winnerText.text = playerHasWon + " is the winner. To continue, press 'Enter' to restart the game.";
+        winnerText.text = playerHasWon + " is the winner. To restart the game press 'ENTER'.";
         waitForInput = true;
     }
+
     void ResetGame()
     {
         //Resets the entire game

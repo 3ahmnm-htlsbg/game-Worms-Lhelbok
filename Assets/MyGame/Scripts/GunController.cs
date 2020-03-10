@@ -13,6 +13,8 @@ public class GunController : MonoBehaviour
     private GameObject bulletInst;
     private int i = 0;
     private bool playerNumberOne;
+    private int coolDownTime = 20; 
+
     void Start()
     {
         player = GetComponent<Rigidbody>();
@@ -41,11 +43,12 @@ public class GunController : MonoBehaviour
             //shoot with the bazuca
             if (Input.GetKey("2"))
             {
+                
                 i--;
                 if (i < 0)
                 {
                     ShootBullet();
-                    i = 23;
+                    i = coolDownTime;
                 }
             }
         }
@@ -64,13 +67,13 @@ public class GunController : MonoBehaviour
             }
 
             //shoot with the bazuca
-            if (Input.GetKey("8"))
+            if (Input.GetKey("9"))
             {
                 i--;
                 if (i < 0)
                 {
                     ShootBullet();
-                    i = 23;
+                    i = coolDownTime;
                 }
             }
         }
