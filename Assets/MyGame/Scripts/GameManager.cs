@@ -45,12 +45,12 @@ public class GameManager : MonoBehaviour
         if (playerOne == true)
         {
             //PlayerOne -> vector defines the spawn position on the left side
-            Instantiate(playerWorm, new Vector3(-6.57f, 3.92f, 0f), Quaternion.identity);
+            Instantiate(playerWorm, new Vector3(-6.57f, 2.7f, 0f), Quaternion.identity);
         }
         if (playerOne == false)
         {
             //PlayerTwo -> vector defines the spawn position on the right side
-            Instantiate(playerWorm, new Vector3(6.57f, 3.92f, 0f), Quaternion.identity);
+            Instantiate(playerWorm, new Vector3(6.57f, 2.7f, 0f), Quaternion.identity);
         }
     }
     void UpdateLife()
