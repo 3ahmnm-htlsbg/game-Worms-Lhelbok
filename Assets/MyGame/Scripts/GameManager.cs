@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     public Text playerTwoText;
     private int playerOneLife;
     private int playerTwoLife;
-    private GameObject gameManager;
 
     public GameObject Health;
 
