@@ -26,7 +26,7 @@ WebGL has to be installed + stable internet connection
 template for the README by smeerws
 
 ### Project state: 
-90%
+70%
 
 ### Limitations: 
 None

@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         if (playerOne == false)
         {
             //PlayerTwo -> vector defines the spawn position on the right side
-            Instantiate(playerWorm, new Vector3(6.57f, 2.7f, 0f), Quaternion.identity);
+            Instantiate(playerWorm, new Vector3(6.57f, 2.7f, 0f), transform.rotation * Quaternion.Euler(0f, 180f, 0f));
         }
     }
     void UpdateLife()
