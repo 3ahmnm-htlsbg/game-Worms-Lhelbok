@@ -1,0 +1,16 @@
+Hallo Herr Gruber!
+
+Die folgenden Probleme bei meinem Spiel sind:
+
+- Springen des Character hat nicht funktioniert
+- Der Pivot des Bogen ließ sich nicht ändern, nicht einmal wenn man ihn an ein anderes Objekt geparentet hat
+- Die Pfeile sind falsch geflogen und haben keine Leben abegzogen
+- Bei den Kürbissen bin ich mir auch nicht mehr sicher ob sie Punkte hinzufügen
+- Mittlerweile kommt nicht einmal mehr der Character :(
+
+Wenn es vielleicht eine Hilfe ist:
+
+Worm war der alte Character, vielleicht hilft das als Referenzmaterial
+Healthsystem waren die Healthpackages funktioniert eventuell auch als Referenzmaterial
+
+Danke nochmal für Ihre Hilfe!

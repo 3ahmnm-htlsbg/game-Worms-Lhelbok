@@ -69,10 +69,10 @@ public class WormController : MonoBehaviour
     void PlayerJump()
     {
         //method to let the worm jump in direction y
-        player.AddForce(0f, 5.25f, 0f, ForceMode.Impulse);
+        player.AddForce(0f, 8f, 0f, ForceMode.Impulse);
     }
 
-    void OnTriggerStay(Collider target)
+    void OnTriggerEnter(Collider target)
     {
         if (target.tag == "SceneItems")
         {

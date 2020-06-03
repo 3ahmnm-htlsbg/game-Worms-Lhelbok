@@ -89,7 +89,7 @@ public class GunController : MonoBehaviour
         bazucaSpawnRot = bulletSpawn.transform.rotation;
 
         //Instatiate the bullet
-        bulletInst = Instantiate(bullet, bazucaSpawnPos, bazucaSpawnRot) as GameObject;
+        bulletInst = Instantiate(bullet, bazucaSpawnPos, transform.rotation * Quaternion.Euler(180f, 180f, 0f)) as GameObject;
 
         //add force
         rigidbodyBullet = bulletInst.GetComponent<Rigidbody>();
