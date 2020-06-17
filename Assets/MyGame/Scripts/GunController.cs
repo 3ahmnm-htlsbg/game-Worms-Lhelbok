@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GunController : MonoBehaviour
 {
-    private Rigidbody player;
+    public Rigidbody player;
     public GameObject bulletSpawn;
     private Vector3 bazucaSpawnPos;
 
@@ -17,7 +17,6 @@ public class GunController : MonoBehaviour
 
     void Start()
     {
-        player = GetComponent<Rigidbody>();
         if (this.transform.position.x < 0)
         {
             playerNumberOne = true;
@@ -93,6 +92,6 @@ public class GunController : MonoBehaviour
 
         //add force
         rigidbodyBullet = bulletInst.GetComponent<Rigidbody>();
-        rigidbodyBullet.AddForce(this.transform.up * 2f, ForceMode.Impulse);
+        rigidbodyBullet.AddForce(this.transform.forward * 20f, ForceMode.Impulse);
     }
 }
