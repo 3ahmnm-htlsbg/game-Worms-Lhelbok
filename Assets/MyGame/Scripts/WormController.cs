@@ -10,14 +10,15 @@ public class WormController : MonoBehaviour
     private GameObject gameManager;
 
     private bool hasSpawnProt;
+
     void Start()
     {
+        gameManager = GameObject.Find("GameManager");
         player = GetComponent<Rigidbody>();
         if (this.transform.position.x < 0)
         {
             playerNumberOne = true;
         }
-        
     }
 
     void Update()
@@ -82,11 +83,8 @@ public class WormController : MonoBehaviour
 
     public void PlayerDied()
     {
-
         if (!hasSpawnProt)
         {
-            //get the GameManager
-            gameManager = GameObject.Find("GameManager");
             gameManager.GetComponent<GameManager>().PlayerDiedGM(playerNumberOne);
             Destroy(gameObject);
         }
@@ -94,9 +92,13 @@ public class WormController : MonoBehaviour
 
     public void AddHealth()
     {
-        //get the GameManager
-        gameManager = GameObject.Find("GameManager");
         gameManager.GetComponent<GameManager>().PlayerAddHealthGM(playerNumberOne);
+    }
+
+    public void SubtractHealth()
+    {
+        gameManager.GetComponent<GameManager>().PlayerSubHealthGM(playerNumberOne);
+        Debug.Log("SubtractHealth called");
     }
 }
 

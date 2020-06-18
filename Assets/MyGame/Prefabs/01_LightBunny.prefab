@@ -106,11 +106,10 @@ GameObject:
   - component: {fileID: 7292534603075888951}
   - component: {fileID: 1020472750609287966}
   - component: {fileID: 1020472750609287904}
-  - component: {fileID: 1020472750609287905}
   - component: {fileID: 1020472750609287967}
   m_Layer: 0
   m_Name: 01_LightBunny
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,20 +213,6 @@ MeshCollider:
   m_GameObject: {fileID: 9009626534923146219}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 6622264641530768373, guid: d01a9075518a5454c88087bf5bc6e2ef, type: 3}
---- !u!64 &1020472750609287905
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9009626534923146219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
