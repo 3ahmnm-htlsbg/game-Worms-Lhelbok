@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-6772886796938903610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3108484479052490964}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3108484479052285412}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3108484479052285412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 470320, guid: 67a394e1a2f92ca4d905e1ebdc2489a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3108484479052490964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -6772886796938903610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: -7108589671495565048}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &-6414214883264695138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3108484479052490964}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: -7108589671495565048}
+  m_Layer: 0
+  m_Name: CartoonyFightAction 1 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &-7108589671495565048
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 3108484479052490964}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -6414214883264695138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3108484479052285412}
+  m_Father: {fileID: 2844862479245760689}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1234446455491603106
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +75,6 @@ GameObject:
   - component: {fileID: 656809275984911998}
   - component: {fileID: 7061731715607065494}
   - component: {fileID: -95338802380690902}
-  - component: {fileID: 7061731715607065513}
   - component: {fileID: 7061731715607065495}
   m_Layer: 0
   m_Name: 01_Arrow
@@ -33,7 +94,7 @@ Transform:
   m_LocalPosition: {x: -0.154, y: -0.357, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
-  - {fileID: 3108484479052285412}
+  - {fileID: -7108589671495565048}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -115,19 +176,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!65 &7061731715607065513
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234446455491603106}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.008315412, y: 0.00831541, z: 0.12963814}
-  m_Center: {x: 0.000000005587937, y: -0.000000003259629, z: 0.000000018626455}
 --- !u!114 &7061731715607065495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,10 +195,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2844862479245760689}
     m_Modifications:
-    - target: {fileID: 108514, guid: 67a394e1a2f92ca4d905e1ebdc2489a5, type: 3}
-      propertyPath: m_Name
-      value: CartoonyFightAction 1
-      objectReference: {fileID: 0}
     - target: {fileID: 470320, guid: 67a394e1a2f92ca4d905e1ebdc2489a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -195,6 +239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 108514, guid: 67a394e1a2f92ca4d905e1ebdc2489a5, type: 3}
+      propertyPath: m_Name
+      value: CartoonyFightAction 1
+      objectReference: {fileID: 0}
     - target: {fileID: 19862396, guid: 67a394e1a2f92ca4d905e1ebdc2489a5, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -229,9 +277,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67a394e1a2f92ca4d905e1ebdc2489a5, type: 3}
---- !u!4 &3108484479052285412 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 470320, guid: 67a394e1a2f92ca4d905e1ebdc2489a5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3108484479052490964}
-  m_PrefabAsset: {fileID: 0}

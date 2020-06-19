@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
     public GameObject playerWorm;
     public Text playerOneText;
     public Text playerTwoText;
-    private int playerOneLife;
-    private int playerTwoLife;
-
-    public GameObject Health;
+    public int playerOneLife;
+    public int playerTwoLife;
 
     private int lifeTotal = 4;
     private int addPoints = 2;
+
+    string playerHasWon;
+    bool waitForInput;
 
     [SerializeField] private Text winnerText;
 
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
     void SpawnPlayers(bool playerOne)
     {
         if (playerOne == true)
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
             Instantiate(playerWorm, new Vector3(+6.35f, 4.615f, 0.119f), transform.rotation * Quaternion.Euler(0f, -90f, 0f));
         }
     }
+
     void UpdateLife()
     {
         //updates text in the canvas from player one and two
@@ -60,15 +63,30 @@ public class GameManager : MonoBehaviour
         playerTwoText.text = playerTwoLife.ToString();
     }
 
+    public void PlayerSubHealthGM(bool PlayerOne)
+    {
+        if (PlayerOne == true)
+        {
+            playerOneLife -= 1;
+            UpdateLife();
+        }
+        
+        if (PlayerOne == false)
+        {
+            playerTwoLife -= 1;
+            UpdateLife();
+        }
+    }
+
     //add health points to the life count when player collides with the cube
     public void PlayerAddHealthGM(bool PlayerOne)
     {
-       if (PlayerOne == true && playerOneLife < lifeTotal)
+       if (PlayerOne == true)
         {
             playerOneLife += addPoints;
             UpdateLife();
         }
-        if (PlayerOne == false && playerTwoLife < lifeTotal)
+        if (PlayerOne == false)
         {
             playerTwoLife += addPoints;
             UpdateLife();
@@ -103,8 +121,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    string playerHasWon;
-    bool waitForInput;
 
     void PresentWinner()
     {
