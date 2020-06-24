@@ -4082,5 +4082,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6195814988042206212, guid: 33451822f1327b441ab803f65ffe811d,
+        type: 3}
+      propertyPath: m_text
+      value: 'Player One (Right):
+
+        J/L = move
+
+        I = jump
+
+        U/O = rotate bow
+
+        9 (press and halt) = shoot'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33451822f1327b441ab803f65ffe811d, type: 3}
