@@ -3,6 +3,7 @@
 ### Project description: 
 
 Game where light bunnys can shoot each other with bows and arrows. Two player game, the task is to shoot at your enemy bunny four times to win the game. With the magic pumpkins you can receive extra points the first round.
+The game can be played with this link: https://3ahmnm-htlsbg.github.io/game-Worms-Lhelbok/
 
 ### Development platform: 
 
@@ -35,7 +36,7 @@ None
 
 - How to instantiate objects
 - That a method can be applied to a key
-- How to code and object into shooting something
+- How to code an object into shooting something
 - That a method from another script can be called
 
 Copyright by Lhelbok
