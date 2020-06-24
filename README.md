@@ -36,7 +36,7 @@ WebGL 1920x1080
 #### Endscreen with displayed winner
 
 <div>
-<img src = "./Screenshots/game-Worms-Lhelbok-Endscreen" width = "500">
+<img src = "./Screenshots/game-Worms-Lhelbok-Endscreen.png" width = "500">
 </div>
 
 ### Necessary setup/execution steps: 
