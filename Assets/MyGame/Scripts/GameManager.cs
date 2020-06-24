@@ -16,20 +16,42 @@ public class GameManager : MonoBehaviour
 
     string playerHasWon;
     bool waitForInput;
-
     [SerializeField] private Text winnerText;
+
+    Vector3 startPosition1;
+    Vector3 startPosition2;
+    Vector3 instructionPosition;
+
+    GameObject clone1;
+    GameObject clone2;
+    public GameObject instructions;
 
     void Start()
     {
         playerOneLife = lifeTotal;
         playerTwoLife = lifeTotal;
-        SpawnPlayers(true);
-        SpawnPlayers(false);
+        startPosition1 = new Vector3(-6.35f, 4.615f, 0.119f);
+        startPosition2 = new Vector3(+6.35f, 4.615f, 0.119f);
+        instructionPosition = new Vector3(0f, 0f, 0f);
+        SpawnPlayers(true); //Zeichnet Player 1
+        SpawnPlayers(false); //Zeichnet Player 2
         UpdateLife();
+
+        
     }
 
     private void Update()
     {
+        if (Input.GetKey("space"))
+        {
+
+            //instructions = GameObject.FindGameObjectWithTag("Instructions");
+            instructions.SetActive(true);
+        }
+        else {
+            instructions.SetActive(false);
+        }
+
         if (waitForInput == true)
         {
             //if the game is finished the key return can be pressed to restart the game 
@@ -47,12 +69,12 @@ public class GameManager : MonoBehaviour
         if (playerOne == true)
         {
             //PlayerOne -> vector defines the spawn position on the left side
-            Instantiate(playerWorm, new Vector3(-6.35f, 4.615f, 0.119f), transform.rotation * Quaternion.Euler(0f, 90f, 0f));
+            clone1 = Instantiate(playerWorm, startPosition1, transform.rotation * Quaternion.Euler(0f, 90f, 0f));
         }
         if (playerOne == false)
         {
             //PlayerTwo -> vector defines the spawn position on the right side
-            Instantiate(playerWorm, new Vector3(+6.35f, 4.615f, 0.119f), transform.rotation * Quaternion.Euler(0f, -90f, 0f));
+            clone2 = Instantiate(playerWorm, startPosition2, transform.rotation * Quaternion.Euler(0f, -90f, 0f));
         }
     }
 
@@ -63,6 +85,7 @@ public class GameManager : MonoBehaviour
         playerTwoText.text = playerTwoLife.ToString();
     }
 
+    //substracts points from life count when a player is hit by a arrow
     public void PlayerSubHealthGM(bool PlayerOne)
     {
         if (PlayerOne == true)
@@ -76,9 +99,11 @@ public class GameManager : MonoBehaviour
             playerTwoLife -= 1;
             UpdateLife();
         }
+       PlayerDiedGM(PlayerOne);
+     
     }
 
-    //add health points to the life count when player collides with the cube
+    //add health points to the life count when player collides with the pumpkin
     public void PlayerAddHealthGM(bool PlayerOne)
     {
        if (PlayerOne == true)
@@ -93,30 +118,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //substracts points from life count when a player is hit by a bullet
+   //check if player died, present winner
     public void PlayerDiedGM(bool PlayerOne)
     {
-        if (PlayerOne == true)
+        if (PlayerOne == true)  //Player 1
         {
-            playerOneLife -= 1;
-            UpdateLife();
             if (playerOneLife <= 0)
             {
                 playerHasWon = "Player Two";
                 PresentWinner();
             }
-            SpawnPlayers(true);
+            
         }
-        if (PlayerOne == false)
+        if (PlayerOne == false) //Player 2
         {
-            playerTwoLife -= 1;
-            UpdateLife();
-            if (playerTwoLife <= 0)
+             if (playerTwoLife <= 0)
             {
                 playerHasWon = "Player One";
                 PresentWinner();
             }
-            SpawnPlayers(false);
+            
         }
 
     }
@@ -129,12 +150,21 @@ public class GameManager : MonoBehaviour
         waitForInput = true;
     }
 
+    
     void ResetGame()
-    {
-        //Resets the entire game
+       {
+           //Resets the entire game
         playerOneLife = lifeTotal;
         playerTwoLife = lifeTotal;
         UpdateLife();
+        Destroy(clone1);
+        Destroy(clone2);
+
+        SpawnPlayers(true); //Zeichnet Player 1
+        SpawnPlayers(false); //Zeichnet Player 2
+        //transform.position = m_NewPosition;
+
+
+        //&Lea Recrerate Pumpkins
     }
 }
-

@@ -8,20 +8,13 @@ public class DestroyBullet : MonoBehaviour
 
     void Update()
     {
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 1);
     }
 
     void OnCollisionEnter(Collision target)
     {
         if (target.gameObject.tag == "Player")
         {
-            /*
-            if (destroyedPlayer == false)
-            {
-                target.gameObject.GetComponent<WormController>().PlayerDied();
-                destroyedPlayer = true;
-            }
-            */
             target.gameObject.GetComponent<WormController>().SubtractHealth();
             Destroy(gameObject);
         }

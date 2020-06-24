@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Healthmanager : MonoBehaviour
 {
+ 
     public void Update()
     {
         //rotate health package
@@ -11,10 +12,11 @@ public class Healthmanager : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        
+        
         //get wormcontroller when player collides with health cube
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Health called");
             collision.gameObject.GetComponent<WormController>().AddHealth();
             Destroy(gameObject);
         }

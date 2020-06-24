@@ -5,15 +5,12 @@ using UnityEngine;
 public class WormController : MonoBehaviour
 {
     private Rigidbody player;
-    public bool playerJumpBool;
     private bool playerNumberOne;
-    private GameObject gameManager;
-
-    private bool hasSpawnProt;
-
+    private GameManager gameManager;
+     
     void Start()
     {
-        gameManager = GameObject.Find("GameManager");
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GetComponent<Rigidbody>();
         if (this.transform.position.x < 0)
         {
@@ -26,43 +23,41 @@ public class WormController : MonoBehaviour
         if (playerNumberOne == true)
         {
             //move the worm to the right side
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") && gameManager.playerOneLife > 0 && gameManager.playerTwoLife > 0)
             {
                 player.AddForce(.5f, 0f, 0f, ForceMode.Impulse);
             }
 
             //move the worm to the left side
-            if (Input.GetKey("a"))
+            if (Input.GetKey("a") && gameManager.playerOneLife > 0 && gameManager.playerTwoLife > 0)
             {
                 player.AddForce(-.5f, 0f, 0f, ForceMode.Impulse);
             }
 
             //let the worm jump upwards
-            if (Input.GetKeyDown("w") && playerJumpBool == true)
+            if (Input.GetKeyDown("w") && gameManager.playerOneLife > 0 && gameManager.playerTwoLife > 0)
             {
                 PlayerJump();
-                playerJumpBool = false;
             }
         }
         else
         {
             //move the worm to the right side
-            if (Input.GetKey("l"))
+            if (Input.GetKey("l") && gameManager.playerOneLife > 0 && gameManager.playerTwoLife > 0)
             {
                 player.AddForce(.5f, 0f, 0f, ForceMode.Impulse);
             }
 
             //move the worm to the left side
-            if (Input.GetKey("j"))
+            if (Input.GetKey("j") && gameManager.playerOneLife > 0 && gameManager.playerTwoLife > 0)
             {
                 player.AddForce(-.5f, 0f, 0f, ForceMode.Impulse);
             }
 
             //let the worm jump upwards
-            if (Input.GetKeyDown("i") && playerJumpBool == true)
+            if (Input.GetKeyDown("i") && gameManager.playerOneLife > 0 && gameManager.playerTwoLife > 0)
             {
                 PlayerJump();
-                playerJumpBool = false;
             }
         }
     }
@@ -73,23 +68,6 @@ public class WormController : MonoBehaviour
         player.AddForce(0f, 8f, 0f, ForceMode.Impulse);
     }
 
-    void OnTriggerEnter(Collider target)
-    {
-        if (target.tag == "SceneItems")
-        {
-            playerJumpBool = true;
-        }
-    }
-
-    public void PlayerDied()
-    {
-        if (!hasSpawnProt)
-        {
-            gameManager.GetComponent<GameManager>().PlayerDiedGM(playerNumberOne);
-            Destroy(gameObject);
-        }
-    }
-
     public void AddHealth()
     {
         gameManager.GetComponent<GameManager>().PlayerAddHealthGM(playerNumberOne);
@@ -98,7 +76,6 @@ public class WormController : MonoBehaviour
     public void SubtractHealth()
     {
         gameManager.GetComponent<GameManager>().PlayerSubHealthGM(playerNumberOne);
-        Debug.Log("SubtractHealth called");
     }
 }
 

@@ -8,6 +8,8 @@ TagManager:
   - PlusLife
   - SceneItems
   - Bazuca
+  - Fire
+  - Instructions
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - PostProcessing
   - 
   - 
   - 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunController : MonoBehaviour
 {
@@ -13,10 +14,14 @@ public class GunController : MonoBehaviour
     private GameObject bulletInst;
     private int i = 0;
     private bool playerNumberOne;
-    private int coolDownTime = 20; 
+    private int coolDownTime = 10;
+    private GameManager gm;
+
 
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         if (this.transform.position.x < 0)
         {
             playerNumberOne = true;
@@ -39,10 +44,12 @@ public class GunController : MonoBehaviour
                 player.AddTorque(0f, 0f, 5f);
             }
 
+
+
             //shoot with the bazuca
-            if (Input.GetKey("2"))
+            //if (Input.GetKey("2"))
+            if (Input.GetKey("2") && gm.playerOneLife > 0 && gm.playerTwoLife > 0)
             {
-                
                 i--;
                 if (i < 0)
                 {
@@ -66,7 +73,7 @@ public class GunController : MonoBehaviour
             }
 
             //shoot with the bazuca
-            if (Input.GetKey("9"))
+            if (Input.GetKey("9") && gm.playerOneLife > 0 && gm.playerTwoLife > 0)
             {
                 i--;
                 if (i < 0)
