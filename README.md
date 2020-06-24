@@ -2,7 +2,7 @@
 
 ### Project description: 
 
-Game where worms can shoot each other with bazucas. Two player game, the task is to shoot at your enemies worm four times to win the game.
+Game where light bunnys can shoot each other with bows and arrows. Two player game, the task is to shoot at your enemy bunny four times to win the game. With the magic pumpkins you can receive extra points the first round.
 
 ### Development platform: 
 
@@ -26,7 +26,7 @@ WebGL has to be installed + stable internet connection
 template for the README by smeerws
 
 ### Project state: 
-70%
+100%
 
 ### Limitations: 
 None
