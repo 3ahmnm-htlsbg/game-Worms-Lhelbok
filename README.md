@@ -2,8 +2,11 @@
 
 ### Project description: 
 
-Game where light bunnys can shoot each other with bows and arrows. Two player game, the task is to shoot at your enemy bunny four times to win the game. With the magic pumpkins you can receive extra points the first round.
-The game can be played with this link: https://3ahmnm-htlsbg.github.io/game-Worms-Lhelbok/
+Game where light bunnys can shoot each other with bows and arrows. 
+Two player game, the task is to shoot at your enemy bunny four times to win the game.
+ With the magic pumpkins you can receive extra points the first round.
+
+The game can be played with this link: https://3ahmnm-htlsbg.github.io/game-Worms-Lhelbok/index.html
 
 ### Development platform: 
 
@@ -17,11 +20,28 @@ The game can be played with this link: https://3ahmnm-htlsbg.github.io/game-Worm
 WebGL 1920x1080
 
 ### Visuals: 
--TODO
+
+#### Executed Program
+
+<div>
+<img src = "./Screenshots/game-Worms-Lhelbok-StartScreen.png" width = "500">
+</div>
+
+#### Instruction Manual
+
+<div>
+<img src = "./Screenshots/game-Worms-Lhelbok-Instructions.png" width = "500">
+</div>
+
+#### Endscreen with displayed winner
+
+<div>
+<img src = "./Screenshots/game-Worms-Lhelbok-Endscreen" width = "500">
+</div>
 
 ### Necessary setup/execution steps: 
 
-WebGL has to be installed + stable internet connection
+WebGL has to be installed and stable internet connection is necessairy
 
 ### Third party material: 
 template for the README by smeerws
