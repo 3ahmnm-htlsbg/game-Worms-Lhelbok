@@ -14,7 +14,7 @@ public class GunController : MonoBehaviour
     private GameObject bulletInst;
     private int i = 0;
     private bool playerNumberOne;
-    private int coolDownTime = 10;
+    private int shootTimeIntervall = 10;
     private GameManager gm;
 
 
@@ -54,7 +54,7 @@ public class GunController : MonoBehaviour
                 if (i < 0)
                 {
                     ShootBullet();
-                    i = coolDownTime;
+                    i = shootTimeIntervall;
                 }
             }
         }
@@ -79,7 +79,7 @@ public class GunController : MonoBehaviour
                 if (i < 0)
                 {
                     ShootBullet();
-                    i = coolDownTime;
+                    i = shootTimeIntervall;
                 }
             }
         }

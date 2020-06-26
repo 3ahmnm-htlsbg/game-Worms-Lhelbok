@@ -10,6 +10,7 @@ public class WormController : MonoBehaviour
      
     void Start()
     {
+        //get the game manager
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GetComponent<Rigidbody>();
         if (this.transform.position.x < 0)

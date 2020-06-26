@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
         startPosition1 = new Vector3(-6.35f, 4.615f, 0.119f);
         startPosition2 = new Vector3(+6.35f, 4.615f, 0.119f);
         instructionPosition = new Vector3(0f, 0f, 0f);
-        SpawnPlayers(true); //Zeichnet Player 1
-        SpawnPlayers(false); //Zeichnet Player 2
+        SpawnPlayers(true); //spawns Player 1
+        SpawnPlayers(false); //spawns Player 2
         UpdateLife();
 
         
@@ -44,11 +44,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey("space"))
         {
-
-            //instructions = GameObject.FindGameObjectWithTag("Instructions");
+            //activate the instructions while space key is pressed
             instructions.SetActive(true);
         }
         else {
+            //deactivate the instructions when space key is not pressed
             instructions.SetActive(false);
         }
 
@@ -153,18 +153,14 @@ public class GameManager : MonoBehaviour
     
     void ResetGame()
        {
-           //Resets the entire game
+         //Resets the entire game
         playerOneLife = lifeTotal;
         playerTwoLife = lifeTotal;
         UpdateLife();
         Destroy(clone1);
         Destroy(clone2);
 
-        SpawnPlayers(true); //Zeichnet Player 1
-        SpawnPlayers(false); //Zeichnet Player 2
-        //transform.position = m_NewPosition;
-
-
-        //&Lea Recrerate Pumpkins
+        SpawnPlayers(true); //spawns Player 1
+        SpawnPlayers(false); //spawns Player 2
     }
 }
